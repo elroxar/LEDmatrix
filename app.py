@@ -20,11 +20,12 @@ def index():
 @app.route('/<device>/<status>')
 def action(device, status):
     if device == 'led':
-        actuator = 'led'
+        actuator = led
     elif device == 'matrix':
-        actuator = 'matrix'
+        # actuator = matrix
+        pass
     else:
-        actuator = 'matrix'
+        actuator = led
 
     if status == 'on':
         gpio.output(actuator, gpio.HIGH)
