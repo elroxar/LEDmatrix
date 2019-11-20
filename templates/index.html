@@ -8,12 +8,15 @@
 <body>
 <h1>LED-Matrix</h1>
 <hr/>
-<button id="on">ON</button>
-<button id="off">OFF</button>
+<form action="/matrix/on"><input type="submit" value="ON"/></form>
+<br/>
+<form action="/matrix/off"><input type="submit" value="OFF"/></form>
 <br/>
 <input type="text" id="text" content="Display Text">
 <button type="submit" id="change">Change</button>
+<hr/>
+<form action="/led/on"><input type="submit" value="ON"></form>
 <br/>
-{{ time }}
+<form action="/led/off"><input type="submit" value="OFF"></form>
 </body>
 </html>

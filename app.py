@@ -7,7 +7,6 @@ gpio.setmode(gpio.BCM)
 gpio.setwarnings(True)
 
 led = 26
-ledStatus = 0
 
 gpio.setup(led, gpio.OUT)
 gpio.output(led, gpio.LOW)
@@ -20,7 +19,9 @@ def index():
 
 @app.route('/<device>/<status>')
 def action(device, status):
-    if device == 'matrix':
+    if device == 'led':
+        actuator = 'led'
+    elif device == 'matrix':
         actuator = 'matrix'
     else:
         actuator = 'matrix'
