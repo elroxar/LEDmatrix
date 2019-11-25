@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel==stylesheet href="/static/style.css">
-    <title>LED-Matrix</title>
+	<meta charset="UTF-8">
+	<link rel==stylesheet href="/static/style.css">
+	<title>LED-Matrix</title>
 </head>
 <body>
 <h1>LED-Matrix</h1>
@@ -12,8 +12,10 @@
 <br/>
 <form action="/matrix/off"><input type="submit" value="OFF"/></form>
 <br/>
-<input type="text" id="text" content="Display Text">
-<button type="submit" id="change">Change</button>
+<form id="display">
+	<input type="text" id="text" content="Display Text">
+	<button type="submit" id="change">Change</button>
+</form>
 <hr/>
 <form action="/led/on"><input type="submit" value="ON"></form>
 <br/>

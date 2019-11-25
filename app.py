@@ -1,5 +1,5 @@
 import gpio
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -12,8 +12,14 @@ gpio.setup(led, gpio.OUT)
 gpio.output(led, gpio.LOW)
 
 
-@app.route('/')
+def changeText(text):
+    pass
+
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
+    data = request.form['display']
+    changeText(data)
     return render_template('index.html')
 
 
@@ -31,7 +37,7 @@ def action(device, status):
         gpio.output(actuator, gpio.HIGH)
     if status == 'off':
         gpio.output(actuator, gpio.LOW)
-
+    render_template('done.html')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
