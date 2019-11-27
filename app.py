@@ -29,8 +29,10 @@ def changeText(text):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     logger.debug("entered '/'")
-    data = request.form['display']
-    changeText(data)
+    if request.method == 'POST':
+        data = request.form['display']
+        logger.debug("Changing text to %s", data)
+        changeText(data)
     return render_template('index.html')
 
 
@@ -48,7 +50,7 @@ def action(device, status):
         gpio.output(actuator, gpio.HIGH)
     if status == 'off':
         gpio.output(actuator, gpio.LOW)
-    render_template('done.html')
+    return render_template('done.html')
 
 
 if __name__ == '__main__':
