@@ -9,16 +9,16 @@
 <h1>LED-Matrix</h1>
 <hr/>
 <form action="/matrix/on"><input type="submit" value="ON"/></form>
-<br/>
 <form action="/matrix/off"><input type="submit" value="OFF"/></form>
-<br/>
 <form method="POST" id="changeText">
 	<input type="text" name="display" id="display" placeholder="Display Text">
 	<button type="submit" id="change">Change</button>
 </form>
-<hr/>
-<form action="/led/on"><input type="submit" value="ON"></form>
 <br/>
+<h1>LED Yellow</h1>
+<hr/>
+<form action="/led/toggle"><input type="submit" value="TOGGLE"></form>
+<form action="/led/on"><input type="submit" value="ON"></form>
 <form action="/led/off"><input type="submit" value="OFF"></form>
 </body>
 </html>
